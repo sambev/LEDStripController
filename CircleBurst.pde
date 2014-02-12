@@ -1,36 +1,36 @@
 class CircleBurst extends Effect{
-	
-	float circleSpeed = 3;
 
-	color baseColor;	
+    float circleSpeed = 3;
 
-	float r = 1;
-	float weight = 2;
-	float x;
-	float y;
+    color baseColor;
 
-	CircleBurst(int _millis, color _c){
-		super(_millis);
+    float r = 1;
+    float weight = 2;
+    float x;
+    float y;
 
-		baseColor = _c;
+    CircleBurst(int _millis, color _c){
+        super(_millis);
 
-		x = cols/2;
-		y = rows/2;
-		imageBuffer.beginDraw();
-		imageBuffer.noFill();
-		imageBuffer.stroke(baseColor);
-		imageBuffer.strokeWeight(weight);
-		// imageBuffer.noSmooth();
-		imageBuffer.endDraw();
-	}
+        baseColor = _c;
 
-	void update(){
-		imageBuffer.beginDraw();
-		imageBuffer.background(0,10);
-		imageBuffer.ellipse(x,y,r,r);
-		imageBuffer.endDraw();
-		//ease out
-		r++;
-		// weight+=weight*0.98;
-	}
+        x = cols/2;
+        y = rows/2;
+        imageBuffer.beginDraw();
+        imageBuffer.noFill();
+        imageBuffer.stroke(baseColor);
+        imageBuffer.strokeWeight(weight);
+        // imageBuffer.noSmooth();
+        imageBuffer.endDraw();
+    }
+
+    void update(){
+        imageBuffer.beginDraw();
+        imageBuffer.background(0,10);
+        imageBuffer.ellipse(x,y,r,r);
+        imageBuffer.endDraw();
+        //ease out
+        r++;
+        // weight+=weight*0.98;
+    }
 }
